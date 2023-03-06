@@ -84,7 +84,7 @@ const Modal = ({ setModal, animateModal, setanimateModal, saveSpend }) => {
           </select>
         </div>
 
-        <input type='submit' value='Eñadir gastos' />
+        <input type='submit' value='Añadir gastos' />
       </form>
     </div>
   )
