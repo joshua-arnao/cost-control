@@ -7,11 +7,18 @@ import { generateId } from './helpers'
 import IconNewSpent from './img/nuevo-gasto.svg'
 
 function App() {
-  const [budget, setBudget] = useState('')
+  const [budget, setBudget] = useState(
+    Number(localStorage.getItem('budget')) ?? ''
+  )
+  const [expenses, setExpenses] = useState(
+    localStorage.getItem('expenses')
+      ? JSON.parse(localStorage.getItem('expenses'))
+      : []
+  )
   const [isValidBudget, setIsValidBudget] = useState(false)
   const [modal, setModal] = useState(false)
   const [animateModal, setanimateModal] = useState(false)
-  const [expenses, setExpenses] = useState([])
+
   const [editSpend, setEditSpend] = useState({})
 
   useEffect(() => {
@@ -20,6 +27,22 @@ function App() {
       handleNewSpent()
     }
   }, [editSpend])
+
+  useEffect(() => {
+    localStorage.setItem('budget', budget ?? '')
+  }, [budget])
+
+  useEffect(() => {
+    localStorage.setItem('expenses', JSON.stringify(expenses) ?? [])
+  }, [expenses])
+
+  useEffect(() => {
+    const budgetLocalStorage = Number(localStorage.getItem('budget')) ?? ''
+
+    if (budgetLocalStorage > 0) {
+      setIsValidBudget(true)
+    }
+  }, [])
 
   const handleNewSpent = () => {
     setModal(true)
