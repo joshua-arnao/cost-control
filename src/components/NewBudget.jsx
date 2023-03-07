@@ -17,14 +17,14 @@ const NewBudget = ({ budget, setBudget, setIsValidBudget }) => {
   }
 
   return (
-    <div className='contenedor-presupuesto contenedor sombra'>
-      <form onSubmit={handleBudget} className='formulario'>
-        <div className='campo'>
+    <div className='container-budget container shade'>
+      <form onSubmit={handleBudget} className='form'>
+        <div className='field'>
           <label>Definir Presupuesto</label>
           <input
-            className='nuevo-presupuesto'
+            className='new-budget'
             type='number'
-            placeholder='Añade presupuesto'
+            placeholder='Añade Presupuesto'
             value={budget}
             onChange={(e) => setBudget(Number(e.target.value))}
           />

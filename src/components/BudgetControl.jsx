@@ -44,26 +44,26 @@ const BudgetControl = ({
     const result = confirm('¿Deseas reiniciar presupuesto y gastos?')
     if (result) {
       setExpenses([])
-      setBudget(0)
+      setBudget('')
       setIsValidBudget(false)
     }
   }
 
   return (
-    <div className='contenedor-presupuesto contenedor sombra dos-columnas'>
+    <div className='container-budget container shade two-columns'>
       <div>
         <CircularProgressbar
           value={percentage}
           styles={buildStyles({
-            pathColor: percentage > 100 ? '#DC2626' : '#3B82F6',
+            pathColor: percentage > 100 ? '#DC2626' : '#ffac4d',
             trailColor: '#F5F5F5',
-            textColor: percentage > 100 ? '#DC2626' : '#3B82F6'
+            textColor: percentage > 100 ? '#DC2626' : '#ffac4d'
           })}
           text={`${percentage}% Gastado`}
         />
       </div>
 
-      <div className='contenido-presupuesto'>
+      <div className='content-budget'>
         <button className='reset-app' type='button' onClick={handleRestApp}>
           Resetear App
         </button>

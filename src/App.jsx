@@ -99,7 +99,7 @@ function App() {
   }
 
   return (
-    <div className={modal ? 'fijar' : ''}>
+    <div className={modal ? 'fix' : ''}>
       <Header
         expenses={expenses}
         setExpenses={setExpenses}
@@ -123,7 +123,7 @@ function App() {
             />
           </main>
 
-          <div className='nuevo-gasto'>
+          <div className='new-bills'>
             <img
               src={IconNewSpent}
               alt='icon new spent'

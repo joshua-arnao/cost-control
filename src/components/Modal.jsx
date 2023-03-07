@@ -40,7 +40,7 @@ const Modal = ({
     e.preventDefault()
 
     if ([name, amount, category].includes('')) {
-      setMessage('Todos los campos son obligatorios')
+      setMessage('Todos los fields son obligatorios')
 
       setTimeout(() => {
         setMessage('')
@@ -52,19 +52,19 @@ const Modal = ({
 
   return (
     <div className='modal'>
-      <div className='cerrar-modal'>
+      <div className='closed-modal'>
         <img src={CloseBtn} alt='Cerrar Modal' onClick={hideModal} />
       </div>
 
       <form
-        className={`formulario ${animateModal ? 'animar' : 'cerrar'}`}
+        className={`form ${animateModal ? 'animar' : 'closed'}`}
         onSubmit={handleSubmit}
       >
         <legend>{editSpend.name ? 'Editar Gasto' : 'Añadir Gasto'}</legend>
 
         {message && <Message tipo='error'>{message}</Message>}
 
-        <div className='campo'>
+        <div className='field'>
           <label htmlFor='name'>Nombre Gasto</label>
           <input
             id='name'
@@ -75,7 +75,7 @@ const Modal = ({
           />
         </div>
 
-        <div className='campo'>
+        <div className='field'>
           <label htmlFor='amount'>Cantidad</label>
           <input
             id='amount'
@@ -86,7 +86,7 @@ const Modal = ({
           />
         </div>
 
-        <div className='campo'>
+        <div className='field'>
           <label htmlFor='category'>Categoría</label>
           <select
             id='category'

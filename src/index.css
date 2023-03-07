@@ -1,16 +1,16 @@
 :root {
-    --azul: #3b82f6;
-    --blanco: #ffffff;
-    --gris-claro: #f5f5f5;
-    --gris: #94a3b8;
-    --gris-oscuro: #64748b;
-    --negro: #000;
+    --primary: #ffac4d;
+    --white: #ffffff;
+    --gray-light: #f8f6f3;
+    --gray: #b1afac;
+    --gray-dark: #6e6963;
+    --black: #000;
 }
 
 body {
     font-size: 1.6rem;
     font-family: "Raleway";
-    background-color: var(--gris-claro);
+    background-color: var(--gray-light);
 }
 html {
     font-size: 62.5%;
@@ -22,7 +22,7 @@ html {
     box-sizing: inherit;
 }
 
-.fijar {
+.fix {
     overflow: hidden;
     height: 100vh;
 }
@@ -30,81 +30,110 @@ html {
 h1 {
     font-size: 4rem;
 }
+@media (max-width: 768px) {
+    h1 {
+        font-size: 3rem;
+    }
+}
+
 h2 {
     font-size: 3rem;
 }
+@media (max-width: 768px) {
+    h2 {
+        font-size: 2rem;
+    }
+}
 
-.sombra {
-    box-shadow: 0px 9px 10px -10px rgba(0, 0, 0, 0.51);
-    -webkit-box-shadow: 0px 9px 10px -10px rgba(0, 0, 0, 0.51);
-    -moz-box-shadow: 0px 9px 10px -10px rgba(0, 0, 0, 0.51);
-    background-color: var(--blanco);
+
+.shade {
+    box-shadow: 0px 9px 10px -10px rgba(0, 0, 0, 0.35);
+    -webkit-box-shadow: 0px 9px 10px -10px rgba(0, 0, 0, 0.35);
+    -moz-box-shadow: 0px 9px 10px -10px rgba(0, 0, 0, 0.35);
+    background-color: var(--white);
     padding: 4rem;
-    border-radius: 1.2rem;
+    border-radius: 1.5rem;
 }
 
 header {
-    background-color: var(--azul);
+    background-color: var(--primary);
 }
 
 header h1 {
     padding: 3rem 0;
     margin: 0;
-    color: var(--blanco);
+    color: var(--white);
     text-align: center;
 
     text-transform: uppercase;
 }
 
-.formulario {
+.form {
     width: 95%;
     margin: 0 auto;
     padding: 10rem 0;
 }
-@media (min-width: 768px) {
-    .formulario {
+@media (max-width: 768px) {
+    .form {
         padding: 5rem 0;
         width: 60rem;
     }
 }
-.formulario legend {
+.form legend {
     font-size: 3.6rem;
     text-align: center;
     display: block;
     text-transform: uppercase;
-    color: var(--blanco);
+    color: var(--white);
     margin-bottom: 4rem;
     padding-bottom: 1rem;
-    border-bottom: 2px solid var(--azul);
+    border-bottom: 2px solid var(--primary);
 }
-.formulario .campo {
+.form .field {
     display: grid;
     margin-bottom: 2rem;
 }
+@media (max-width: 768px) {
+    form .field select{
+        width: 100%;
+    }
+}
 
-.formulario label {
-    color: var(--azul);
+.form label {
+    color: var(--primary);
     font-size: 2.8rem;
     text-align: center;
     margin-bottom: 2rem;
 }
+@media (max-width: 768px) {
+    .form label{
+        font-size: 2.2rem;
+    }
+}
 
-.formulario input[type="text"],
-.formulario input[type="number"] {
-    background-color: var(--gris-claro);
-    border-radius: 1rem;
+.form input[type="text"],
+.form input[type="number"] {
+    background-color: var(--gray-light);
+    border-radius: 0.5rem;
     padding: 1rem;
     border: none;
     flex: 1;
     font-size: 1.6rem;
 }
-.formulario input[type="submit"] {
-    background-color: #1048a4;
+@media (max-width: 768px) {
+    .form input{
+       width: 100%;
+       font-size: 1rem;
+    }
+}
+.form input[type="submit"] {
+    background-color: #ab6618;
     border: none;
+    border-radius: 1rem;
     padding: 1rem;
     text-align: center;
-    margin-top: 2rem;
-    color: var(--blanco);
+    margin-top: 8rem;
+    color: var(--white);
     font-weight: 900;
     text-transform: uppercase;
     font-size: 1.9rem;
@@ -112,26 +141,27 @@ header h1 {
     transition: background-color 300ms ease;
 }
 @media (min-width: 768px) {
-    .formulario input[type="submit"] {
+    .form input[type="submit"] {
         display: block;
         padding: 1rem 5rem;
+        width: 100%;
     }
 }
-.formulario input[type="submit"]:hover {
-    background-color: #042a67;
+.form input[type="submit"]:hover {
+    background-color: #74450f;
     cursor: pointer;
 }
 
-.formulario select {
+.form select {
     flex: 1;
     padding: 1rem;
     border: none;
-    border-radius: 1rem;
+    border-radius: 0.5rem;
     text-align: center;
-    background-color: var(--gris-claro);
+    background-color: var(--gray-light);
 }
 
-.alerta {
+.alert {
     padding: 2rem 5rem;
     /* max-width: 60rem; */
     width: 100%;
@@ -141,20 +171,20 @@ header h1 {
     font-size: 1.8rem;
     text-align: center;
 }
-.alerta.error {
-    background-color: var(--blanco);
+.alert.error {
+    background-color: var(--white);
     border-left: 5px solid #b91c1c;
     color: #b91c1c;
 }
-.alerta.success {
+.alert.success {
 }
 
-.contenedor {
+.container {
     width: 90%;
     max-width: 80rem;
     margin: 0 auto;
 }
-.contenedor-presupuesto {
+.container-budget {
     margin-top: -5rem;
 
     display: flex;
@@ -163,64 +193,69 @@ header h1 {
 
     transform: translateY(5rem);
 }
-.dos-columnas {
+.two-columns {
     flex-direction: column;
 }
-.dos-columnas :first-child {
+.two-columns :first-child {
     margin-bottom: 4rem;
 }
 @media (min-width: 768px) {
-    .dos-columnas {
+    .two-columns {
         flex-direction: row;
         align-items: center;
         gap: 4rem;
     }
-    .dos-columnas > div {
+    .two-columns > div {
         width: 50%;
     }
-    .dos-columnas :first-child {
+    .two-columns :first-child {
         margin-bottom: 0;
     }
 }
-.formulario input[type="text"].nuevo-presupuesto, 
-.formulario input[type="number"].nuevo-presupuesto {
+.form input[type="text"].new-budget, 
+.form input[type="number"].new-budget {
     font-size: 2.8rem;
     text-align: center;
 }
+@media (max-width: 768px) {
+    .form input[type="number"].new-budget{
+        font-size: 2.0rem;
+    }
+}
 
-.contenedor-presupuesto svg {
+.container-budget svg {
     width: 25rem;
 }
 
-.contenido-presupuesto {
+.content-budget {
     width: 100%;
 }
-.contenido-presupuesto p {
+.content-budget p {
     font-weight: 400;
-    color: var(--gris-oscuro);
+    color: var(--gray-dark);
     font-size: 2.4rem;
     text-align: center;
 }
 @media (min-width: 768px) {
-    .contenido-presupuesto p {
+    .content-budget p {
         text-align: left;
     }
 }
-.contenido-presupuesto p.negativo,
-.contenido-presupuesto p.negativo span {
+.content-budget p.negativo,
+.content-budget p.negativo span {
     color: #DC2626;
 }
-.contenido-presupuesto span {
+.content-budget span {
     font-weight: 900;
-    color: var(--azul);
+    color: var(--primary);
 }
 .reset-app {
     border: none;
-    background-color: #db2777;
+    background-color: #ab6618;
     padding: 1rem;
     width: 100%;
     text-align: center;
-    color: var(--blanco);
+    color: var(--white);
     text-transform: uppercase;
     font-weight: 900;
     border-radius: 1rem;
@@ -228,7 +263,7 @@ header h1 {
     transition-duration: 300ms;
 }
 .reset-app:hover {
-    background-color: #c71465;
+    background-color: #74450f;
     cursor: pointer;
 }
 
@@ -236,38 +271,44 @@ main {
     padding-top: 10rem;
 }
 
-.filtros .campo {
+.filters .field {
     display: flex;
     align-items: center;
     gap: 2rem;
 }
-.filtros label {
+.filters label {
     font-size: 3rem;
     font-weight: 900;
-    color: var(--gris-oscuro);
+    color: var(--gray-dark);
 }
-.filtros select {
+@media (max-width: 768px) {
+    .filters label {
+        font-size: 1.8rem;
+    }
+}
+
+.filters select {
     flex: 1;
     padding: 1rem;
     border: none;
     border-radius: 1rem;
     text-align: center;
-    background-color: var(--gris-claro);
+    background-color: var(--gray-light);
 }
 
-.listado-gastos {
+.list-bills {
     margin-top: 5rem;
 }
-.listado-gastos h2 {
-    color: var(--gris-oscuro);
+.list-bills h2 {
+    color: var(--gray-dark);
     font-weight: 900;
 }
-.no-gastos {
+.no-bills {
     text-align: center;
     font-size: 2.2rem;
 }
 
-.gasto {
+.bills {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -276,65 +317,84 @@ main {
     width: 100%;
 }
 
-.cantidad-gasto {
+.cantidad-bills {
     font-size: 2.4rem;
-    color: var(--negro);
+    color: var(--black);
     font-weight: 900;
 }
 
-.contenido-gasto {
+.content-bills {
     display: flex;
     align-items: center;
     gap: 2rem;
 }
 
-.contenido-gasto img {
+.content-bills img {
     width: 10rem;
 }
+@media (max-width: 768px) {
+    .content-bills img {
+        width: 5rem;
+    }
+}
 
-.descripcion-gasto p {
+.description-bills p {
     margin: 0 0 0.3rem 0;
 }
-.descripcion-gasto .categoria {
-    color: var(--gris);
+.description-bills .categoria {
+    color: var(--gray);
     font-size: 1.6rem;
     font-weight: 900;
     text-transform: uppercase;
 }
-.descripcion-gasto p {
+.description-bills p {
     margin-bottom: 1rem;
 }
-.descripcion-gasto .nombre-gasto {
-    color: var(--gris-oscuro);
+.description-bills .name-bills {
+    color: var(--gray-dark);
     font-size: 2.4rem;
     font-weight: 700;
 }
-.descripcion-gasto .nombre-gasto:hover {
+@media (max-width: 768px) {
+    .description-bills .name-bills  {
+        font-size:1.8rem;
+    }
+}
+
+
+.description-bills .name-bills:hover {
     cursor: pointer;
 }
-.descripcion-gasto .fecha-gasto {
+.description-bills .fecha-bills {
     font-size: 1.8rem;
     font-weight: 900;
-    color: var(--gris-oscuro);
+    color: var(--gray-dark);
 }
-.descripcion-gasto .fecha-gasto span {
+@media (max-width: 768px) {
+    .description-bills .fecha-bills  {
+        font-size:1.5rem;
+    }
+}
+.description-bills .fecha-bills span {
     font-weight: 400;
 }
 
-.nuevo-gasto {
+.new-bills {
     position: fixed;
     bottom: 5rem;
     right: 5rem;
 }
 
-.nuevo-gasto img {
+.new-bills img {
     width: 5rem;
 }
-.nuevo-gasto img:hover {
+.new-bills img:hover {
     cursor: pointer;
 }
 
 .modal {
+    display: flex;
+    align-items: center;
     position: absolute;
     background-color: rgb(0 0 0 / 0.90);
     top: 0;
@@ -342,18 +402,19 @@ main {
     right: 0;
     bottom: 0;
 }
-.modal .cerrar-modal {
+
+.modal .closed-modal {
     position: absolute;
     right: 3rem;
     top: 3rem;
     width: 3rem;
     height: 3rem;
 }
-.modal .cerrar-modal img {
+.modal .closed-modal img {
     width: 100%;
 }
 
-.modal .formulario {
+.modal .form {
     max-width: 80rem;
     width: 40rem;
     transition-property: all;
@@ -361,19 +422,25 @@ main {
     transition-timing-function: ease-in;
     opacity: 0;
 }
+@media (max-width: 768px) {
+    .modal .form {
+        width: 30rem;
+    }
+}
+
 .modal label {
-    color: var(--blanco);
+    color: var(--white);
 }
 body .modal {
     overflow: hidden;
 }
 
-.modal .formulario.animar {
+.modal .form.animar {
     position: relative;
     opacity: 1;
 }
 
-.modal .formulario.cerrar {
+.modal .form.closed {
     opacity: 0;
 }
 
@@ -387,15 +454,15 @@ body .modal {
 
 /*** SWIPE LIST OVERRIDES **/
 .swipe-action__leading {
-    background-color: var(--azul);
-    color: var(--blanco);
+    background-color: var(--primary);
+    color: var(--white);
     margin-bottom: 2rem;
 }
 
 .swipe-action__trailing {
     background-color: #db2777;
     margin-bottom: 2rem;
-    color: var(--blanco);
+    color: var(--white);
 }
 
 .swipeable-list .swipe-action {

@@ -9,7 +9,7 @@ const ListExpenses = ({
   filterExpenses
 }) => {
   return (
-    <div className='listado-gastos contenedor'>
+    <div className='list-bills container'>
       {/* {expenses ? <h2>Listado de Gastos</h2> : <p>Aún no hay gastos</p>} */}
 
       {filter ? (

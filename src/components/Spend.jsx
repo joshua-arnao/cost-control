@@ -50,21 +50,21 @@ const Spend = ({ spend, setEditSpend, deleteSpend }) => {
         leadingActions={leadingActions()}
         trailingActions={trailingActions()}
       >
-        <div className='gasto sombra'>
-          <div className='contenido-gasto'>
+        <div className='bills shade'>
+          <div className='content-bills'>
             <img src={iconDictionary[category]} alt='Icono Gasto' />
 
-            <div className='descripcion-gasto'>
+            <div className='description-bills'>
               <p className='categoria'>{category}</p>
-              <p className='nombre-gasto'>{name}</p>
-              <p className='fecha-gasto'>
+              <p className='name-bills'>{name}</p>
+              <p className='fecha-bills'>
                 Agregado el: {''}
                 <span>{formatDate(date)}</span>
               </p>
             </div>
           </div>
 
-          <p className='cantidad-gasto'>${amount}</p>
+          <p className='cantidad-bills'>${amount}</p>
         </div>
       </SwipeableListItem>
     </SwipeableList>

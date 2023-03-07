@@ -2,9 +2,9 @@ import React from 'react'
 
 const Filters = ({ filter, setFilter }) => {
   return (
-    <div className='filtros sombra contenedor'>
+    <div className='filters shade container'>
       <form>
-        <div className='campo'>
+        <div className='field'>
           <label>Filtrar Gastos</label>
           <select value={filter} onChange={(e) => setFilter(e.target.value)}>
             <option value=''> -- Todas las categorias -- </option>
