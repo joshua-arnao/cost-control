@@ -54,9 +54,18 @@ h2 {
     padding: 4rem;
     border-radius: 1.5rem;
 }
+@media (max-width: 768px) {
+    .shade {
+        padding: 2rem;
+    }
+}
 
 header {
     background-color: var(--primary);
+}
+
+main {
+    margin-bottom: 4rem;
 }
 
 header h1 {
