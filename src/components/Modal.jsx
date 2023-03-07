@@ -65,7 +65,7 @@ const Modal = ({
         {message && <Message tipo='error'>{message}</Message>}
 
         <div className='field'>
-          <label htmlFor='name'>Nombre Gasto</label>
+          <label htmlFor='name'>Gasto:</label>
           <input
             id='name'
             type='text'
@@ -76,7 +76,7 @@ const Modal = ({
         </div>
 
         <div className='field'>
-          <label htmlFor='amount'>Cantidad</label>
+          <label htmlFor='amount'>Cantidad:</label>
           <input
             id='amount'
             type='number'
@@ -87,7 +87,7 @@ const Modal = ({
         </div>
 
         <div className='field'>
-          <label htmlFor='category'>Categoría</label>
+          <label htmlFor='category'>Categoría:</label>
           <select
             id='category'
             value={category}
