@@ -101,11 +101,12 @@ function App() {
   return (
     <div className={modal ? 'fijar' : ''}>
       <Header
+        expenses={expenses}
+        setExpenses={setExpenses}
         budget={budget}
         setBudget={setBudget}
         isValidBudget={isValidBudget}
         setIsValidBudget={setIsValidBudget}
-        expenses={expenses}
       />
 
       {isValidBudget && (
