@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react'
+import Filters from './components/Filters'
 import Header from './components/Header'
 import ListExpenses from './components/ListExpenses'
 import Modal from './components/Modal'
@@ -20,6 +21,9 @@ function App() {
   const [animateModal, setanimateModal] = useState(false)
 
   const [editSpend, setEditSpend] = useState({})
+
+  const [filter, setFilter] = useState('')
+  const [filterExpenses, setFilterExpenses] = useState([])
 
   useEffect(() => {
     console.log('Componente listo')
@@ -43,6 +47,19 @@ function App() {
       setIsValidBudget(true)
     }
   }, [])
+
+  useEffect(() => {
+    if (filter) {
+      console.log('Filtrando ...', filter)
+
+      //Filtra gasto por categoria
+      const filterExpenses = expenses.filter(
+        (spend) => spend.category === filter
+      )
+
+      setFilterExpenses(filterExpenses)
+    }
+  }, [filter])
 
   const handleNewSpent = () => {
     setModal(true)
@@ -94,10 +111,14 @@ function App() {
       {isValidBudget && (
         <>
           <main>
+            <Filters filter={filter} setFilter={setFilter} />
+
             <ListExpenses
               expenses={expenses}
               setEditSpend={setEditSpend}
               deleteSpend={deleteSpend}
+              filter={filter}
+              filterExpenses={filterExpenses}
             />
           </main>
 
